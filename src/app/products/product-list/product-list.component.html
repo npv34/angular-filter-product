@@ -25,6 +25,7 @@
           <th scope="col">Image</th>
           <th scope="col">Price</th>
           <th scope="col">Description</th>
+          <th scope="col">Rating</th>
         </tr>
         </thead>
         <tbody>
@@ -34,6 +35,8 @@
           <td><img [width]="widthImage" src="{{product.image}}" alt=""></td>
           <td>{{ product.price | currency}}</td>
           <td>{{ product.desc}}</td>
+          <td><app-start [rating]="product.startRating"
+          (ratingClicked)="onRatingClicked($event)" ></app-start></td>
         </tr>
         </tbody>
       </table>
