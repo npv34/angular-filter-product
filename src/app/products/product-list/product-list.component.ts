@@ -15,19 +15,25 @@ export class ProductListComponent implements OnInit {
       name : 'Laptop dell',
       price: 1000,
       image: 'assets/images/products/may-tinh-bang.jpeg',
-      desc: 'aadsadsadas'
+      desc: 'aadsadsadas',
+      rating: 4,
+      active: 1,
     },
     { id : 2,
       name : 'Laptop asus',
       price: 3000,
       image: 'assets/images/products/may-tinh-bang.jpeg',
-      desc: 'aadsadsadas'
+      desc: 'aadsadsadas',
+      rating: 3.5,
+      active: 0
     },
     { id : 3,
       name : 'Laptop hp',
       price: 2000,
       image: 'assets/images/products/may-tinh-bang.jpeg',
-      desc: 'aadsadsadas'
+      desc: 'aadsadsadas',
+      rating: 5,
+      active: 1
     }
   ];
   filteredProduct: IProduct[];
@@ -52,5 +58,9 @@ export class ProductListComponent implements OnInit {
     return this.products.filter((product: IProduct) =>
     product.name.indexOf(filterBy) !== -1
     );
+  }
+
+  ClickedStar(message: string) {
+    this.pageTitle = message;
   }
 }

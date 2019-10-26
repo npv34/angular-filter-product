@@ -4,4 +4,6 @@ export interface IProduct {
   price: number;
   image: string;
   desc: string;
+  rating: any;
+  active: number;
 }
