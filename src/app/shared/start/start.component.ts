@@ -18,7 +18,6 @@ export class StartComponent implements OnInit, OnChanges {
     this.starWidth = this.rating * 75 / 5;
   }
   click() {
-    this.clickStar.emit('Clicked  star ' + this.rating);
+    this.clickStar.emit('The rating ' + this.rating + ' clicked!');
   }
-
 }

@@ -10,6 +10,7 @@ export class ProductListComponent implements OnInit {
   pageTitle = 'Product Manager';
   keywordFilter = '';
   widthImage = 100;
+  message: string;
   products: IProduct[] = [
     {id : 1,
       name : 'Laptop dell',
@@ -59,8 +60,7 @@ export class ProductListComponent implements OnInit {
     product.name.indexOf(filterBy) !== -1
     );
   }
-
-  ClickedStar(message: string) {
-    this.pageTitle = message;
+  onRatingClicked(message: string) {
+    this.message = message;
   }
 }

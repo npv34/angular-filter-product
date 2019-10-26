@@ -5,12 +5,10 @@
     Products list
   </div>
   <div class="card-body">
-      <app-input-filter (filterKeyWord)="setFilter($event)"></app-input-filter>
-<!--      <div class="col-md-2">Filter</div>-->
-<!--      <div class="col-md-4">-->
-<!--        <input type="text" [(ngModel)]="keywordFilter" (ngModelChange)="setFilter(keywordFilter)">-->
-<!--      </div>-->
-
+    <app-input-filter (filterKeyWord)="setFilter($event)"></app-input-filter>
+    <div class="message">
+      <p class="text-success">{{ message }}</p>
+    </div>
     <div class="table-responsive">
       <table class="table">
         <thead class="thead-light">
@@ -20,7 +18,7 @@
           <th scope="col">Image</th>
           <th scope="col">Price</th>
           <th scope="col">Description</th>
-          <th scope="col">Start</th>
+          <th scope="col">Rating</th>
           <th scope="col">Status</th>
         </tr>
         </thead>
@@ -32,7 +30,7 @@
           <td>{{ product.price | currency}}</td>
           <td>{{ product.desc}}</td>
           <td><app-start [rating]="product.rating"
-          (clickStar)="ClickedStar($event)"></app-start></td>
+          (clickStar)="onRatingClicked($event)"></app-start></td>
           <td>
             <ng-container *ngIf="product.active; else disable">
               <p class="text-success">Active</p>

@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import { StartComponent } from './shared/start/start.component';
 import { InputFilterComponent } from './shared/input-filter/input-filter.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
