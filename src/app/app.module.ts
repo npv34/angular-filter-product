@@ -4,9 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { StartComponent } from './shared/start/start.component';
 import { InputFilterComponent } from './shared/input-filter/input-filter.component';
+import { MenuComponent } from './core/menu/menu.component';
+import { ProductAddComponent } from './products/product-add/product-add.component';
 
 
 @NgModule({
@@ -14,12 +16,15 @@ import { InputFilterComponent } from './shared/input-filter/input-filter.compone
     AppComponent,
     ProductListComponent,
     StartComponent,
-    InputFilterComponent
+    InputFilterComponent,
+    MenuComponent,
+    ProductAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
