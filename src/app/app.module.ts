@@ -9,6 +9,7 @@ import { StartComponent } from './shared/start/start.component';
 import { InputFilterComponent } from './shared/input-filter/input-filter.component';
 import { MenuComponent } from './core/menu/menu.component';
 import { ProductAddComponent } from './products/product-add/product-add.component';
+import { ProductUpdateComponent } from './products/product-update/product-update.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ProductAddComponent } from './products/product-add/product-add.componen
     StartComponent,
     InputFilterComponent,
     MenuComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    ProductUpdateComponent
   ],
   imports: [
     BrowserModule,

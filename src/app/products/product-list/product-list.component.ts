@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {IProduct} from '../IProduct';
+import {ProductService} from '../../services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -11,38 +12,14 @@ export class ProductListComponent implements OnInit {
   keywordFilter = '';
   widthImage = 100;
   message: string;
-  products: IProduct[] = [
-    {id : 1,
-      name : 'Laptop dell',
-      price: 1000,
-      image: 'assets/images/products/may-tinh-bang.jpeg',
-      desc: 'aadsadsadas',
-      rating: 4,
-      active: 1,
-    },
-    { id : 2,
-      name : 'Laptop asus',
-      price: 3000,
-      image: 'assets/images/products/may-tinh-bang.jpeg',
-      desc: 'aadsadsadas',
-      rating: 3.5,
-      active: 0
-    },
-    { id : 3,
-      name : 'Laptop hp',
-      price: 2000,
-      image: 'assets/images/products/may-tinh-bang.jpeg',
-      desc: 'aadsadsadas',
-      rating: 5,
-      active: 1
-    }
-  ];
+  products: IProduct[] = [];
   filteredProduct: IProduct[];
 
-  constructor() {
+  constructor(private productService: ProductService) {
   }
 
   ngOnInit() {
+    this.products = this.productService.getAll();
     this.filteredProduct = this.products;
   }
 
